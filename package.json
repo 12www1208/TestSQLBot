@@ -1,0 +1,23 @@
+{
+  "name": "testsqlbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/12www1208/TestSQLBot.git"
+  },
+  "author": "Karter_Kein (12www1208)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/12www1208/TestSQLBot/issues"
+  },
+  "homepage": "https://github.com/12www1208/TestSQLBot#readme",
+  "dependencies": {
+    "sqlite3": "^5.0.2",
+    "telegraf": "^4.7.0"
+  }
+}
