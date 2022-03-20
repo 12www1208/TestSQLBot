@@ -3,7 +3,7 @@ const sqlite3 = require("sqlite3")
 const { Telegraf } = require("telegraf")
 
 
-let db  = new sqlite3.Database('databased', (err) => {
+let db  = new sqlite3.Database('databased.db', (err) => {
 
 	if (err) {
 		console.error(err.message)
@@ -13,7 +13,7 @@ let db  = new sqlite3.Database('databased', (err) => {
 
 })
 
-const bot = new Telegraf(Token.Bot)
+const bot = new Telegraf('')
 
 bot.start((ctx) => ctx.reply('Привет провера базы даных гачнётся'))
 
@@ -31,7 +31,6 @@ bot.hears('Имена', (ctx) => {
 			console.log(rows)
 			ctx.reply(rows)
 		})
-
 
 	})
 })
