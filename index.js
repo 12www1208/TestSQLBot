@@ -49,6 +49,33 @@ bot.command('Na_Info', (ctx) => {
 	})
 })
 
+
+bot.command('Na_History', (ctx) => {
+	db.all(`SELECT history FROM him WHERE het = "Na"`, (err, rows)  => {
+		if (err) {
+			console.error(err.message)
+		}
+		rows.forEach((rows) => {
+			console.log(rows)
+			ctx.reply(rows)
+		})
+	})
+})
+
+bot.command('Na_Get', (ctx) => {
+	db.all(`SELECT getting FROM him WHERE het = "Na"`, (err, rows) => {
+		if (err) {
+			console.error(err.message)
+		}
+
+		rows.forEach((rows) => {
+			console.log(rows)
+			ctx.reply(rows)
+			ctx.reply("Na2CO3 + 2C = 2Na + 3CO")
+		})
+	})
+})
+
 bot.command('Al', (ctx) => {
 	db.all(`SELECT info FROM him WHERE het = "Al"`, (err, rows) => {
 		if (err) {
@@ -63,6 +90,5 @@ bot.command('Al', (ctx) => {
 })
 
 bot.launch()
-
 
 
