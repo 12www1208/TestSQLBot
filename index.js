@@ -28,10 +28,8 @@ bot.hears('Имена', (ctx) => {
 			console.error(err.message)
 		}
 
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-		})
+		ctx.reply(rows)
+
 
 	})
 })
@@ -41,10 +39,9 @@ bot.command('Na_Info', (ctx) => {
 		if (err) {
 			console.error(err.message)
 		}
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-		})
+
+		ctx.reply(rows)
+	
 	})
 })
 
@@ -54,10 +51,7 @@ bot.command('Na_History', (ctx) => {
 		if (err) {
 			console.error(err.message)
 		}
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-		})
+		ctx.reply(rows)
 	})
 })
 
@@ -66,12 +60,7 @@ bot.command('Na_Get', (ctx) => {
 		if (err) {
 			console.error(err.message)
 		}
-
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-			ctx.reply("Na2CO3 + 2C = 2Na + 3CO")
-		})
+		ctx.reply(rows)
 	})
 })
 
@@ -80,26 +69,32 @@ bot.command("Na_all", (ctx) => {
 		if (err) {
 			console.error(err.message)
 		}
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-		})
+
+		ctx.reply(rows)
+
 	})
 })
 
-bot.command('Al', (ctx) => {
+bot.command('Al_Info', (ctx) => {
 	db.all(`SELECT info FROM him WHERE het = "Al"`, (err, rows) => {
 		if (err) {
 			console.error(err.message)
 		}
 
-		rows.forEach((rows) => {
-			console.log(rows)
-			ctx.reply(rows)
-		})
+		ctx.reply(rows)
+		
+	})
+})
+
+bot.command('Al_Get', (ctx) => {
+	db.all(`SELECT  getting FROM him WHERE het = 'Al'`, (err, rows) => {
+		if (err) {
+			console.error(err.message)
+		}
+
+		ctx.reply(rows)
 	})
 })
 
 bot.launch()
-
 
